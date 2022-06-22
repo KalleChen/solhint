@@ -112,7 +112,7 @@ function processStdin(options) {
 
   const report = processStr(stdinBuffer.toString())
   report.file = options.filename || 'stdin'
-  const formatterFn = getFormatter()
+  const formatterFn = getFormatter(options.parent.formatter)
   printReports([report], formatterFn)
 
   exitWithCode([report])
